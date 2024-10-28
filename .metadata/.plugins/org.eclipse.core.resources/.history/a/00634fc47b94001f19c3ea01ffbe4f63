@@ -1,0 +1,70 @@
+/*
+ * fsm_manual.c
+ *
+ *  Created on: 27 Oct 2024
+ *      Author: PC
+ */
+
+#include "button.h"
+#include "software_timer.h"
+#include "led_traffic.h"
+#include "Component_1.h"
+#include "Component.h"
+#include "fsm_automatic.h"
+#include "fsm_setting.h"
+
+void fsm_manual(){
+	if(button_flag[0] == 1){
+		button_flag[0] = 0;
+		mode++;
+		if(mode == 4) mode = 0;
+	}
+	if(timer_flag[2] == 1){
+		int temp = en0;
+		en0 = en1;
+		en1 = temp;
+
+		if(mode == 0){
+			en2 = en0;
+			en3 = en1;
+		}else{
+			en2 = 0;
+			en3 = 1;
+		}
+		random = -random;
+		setTimer(2, 50);
+	}
+	switch(mode){
+	case 0:
+	  if(timer_flag[0] == 1){
+		  dem--;
+		  case1();
+		  if(dem == 0){
+			  dem = 10;
+		  }
+		  setTimer(0, 10);
+	  }
+	  break;
+	case 1:
+	  i = case2(mode, i,
+			  LED_RED_1_GPIO_Port, LED_RED_1_Pin,LED_RED_2_GPIO_Port, LED_RED_2_Pin,
+			  LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin,LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin,
+			  LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin,LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin
+	  );
+	  break;
+	case 2:
+	  j = case2(mode, j,
+			  LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin,LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin,
+			  LED_RED_1_GPIO_Port, LED_RED_1_Pin,LED_RED_2_GPIO_Port, LED_RED_2_Pin,
+			  LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin,LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin
+	  );
+	  break;
+	case 3:
+	  t = case2(mode, t,
+			  LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin,LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin,
+			  LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin,LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin,
+			  LED_RED_1_GPIO_Port, LED_RED_1_Pin,LED_RED_2_GPIO_Port, LED_RED_2_Pin
+	  );
+	  break;
+	}
+}

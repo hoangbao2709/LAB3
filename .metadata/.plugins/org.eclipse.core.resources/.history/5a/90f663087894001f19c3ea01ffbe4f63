@@ -1,0 +1,25 @@
+/*
+ * fsm_automatic.h
+ *
+ *  Created on: 27 Oct 2024
+ *      Author: PC
+ */
+
+#ifndef INC_FSM_AUTOMATIC_H_
+#define INC_FSM_AUTOMATIC_H_
+
+#include "button.h"
+#include "software_timer.h"
+#include "led_traffic.h"
+#include "Component_1.h"
+#include "Component.h"
+
+int bool = 0;
+int counter = 0;
+int i = 5, j = 2, t = 3;
+int test = 1, random = 1, dem = 10;
+int max_Red = 5, max_Yellow = 2, max_Green = 3;
+
+void case1();
+
+#endif /* INC_FSM_AUTOMATIC_H_ */

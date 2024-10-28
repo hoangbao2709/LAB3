@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SETTING2/Core/Src/traffic_1.c&apos; to &apos;led_traffic.c&apos;" description="Rename resource &apos;traffic_1.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/traffic_1.c" name="led_traffic.c" stamp="1729484610462" updateReferences="true"/>
+</session>

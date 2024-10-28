@@ -1,0 +1,6 @@
+led_traffic.c:10:6:LED_RED_1	8	static
+led_traffic.c:16:6:LED_GREEN_1	8	static
+led_traffic.c:22:6:LED_YELLOW_1	8	static
+led_traffic.c:28:6:LED_RED_2	8	static
+led_traffic.c:34:6:LED_GREEN_2	8	static
+led_traffic.c:40:6:LED_YELLOW_2	8	static

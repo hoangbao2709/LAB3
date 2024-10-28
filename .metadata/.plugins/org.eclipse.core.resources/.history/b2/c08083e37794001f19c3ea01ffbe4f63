@@ -1,0 +1,20 @@
+/*
+ * fsm_automatic.h
+ *
+ *  Created on: 27 Oct 2024
+ *      Author: PC
+ */
+
+#ifndef INC_FSM_AUTOMATIC_H_
+#define INC_FSM_AUTOMATIC_H_
+
+#include "button.h"
+#include "software_timer.h"
+#include "led_traffic.h"
+#include "Component_1.h"
+#include "Component.h"
+
+
+
+
+#endif /* INC_FSM_AUTOMATIC_H_ */

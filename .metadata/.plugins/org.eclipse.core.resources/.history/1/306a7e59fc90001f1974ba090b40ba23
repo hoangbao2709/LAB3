@@ -1,0 +1,123 @@
+/*
+ * Component.h
+ *
+ *  Created on: Oct 21, 2024
+ *      Author: PC
+ */
+
+#ifndef INC_COMPONENT_H_
+#define INC_COMPONENT_H_
+
+#include "main.h"
+
+void Khong_1(void);
+
+void Mot_1(void);
+
+void Hai_1(void);
+
+void Ba_1(void);
+
+void Bon_1(void);
+
+void Nam_1(void);
+
+void Sau_1(void);
+
+void Bay_1(void);
+
+void Tam_1(void);
+
+void Chin_1(void);
+
+void display7SEG_1(int num);
+
+void case1(){
+	if(bool == 0){
+		LED_RED_1();
+		if(random == 1)
+			display7SEG(i / 10);
+		else
+			display7SEG(i % 10);
+		if(dem == 0){
+			i--;
+		}
+		if(test == 1){
+			LED_GREEN_2();
+			if(random == 1)
+				display7SEG_1(t / 10);
+			else
+				display7SEG_1(t % 10);
+			if(dem == 0){
+				t--;
+			}
+		}else{
+			LED_YELLOW_2();
+			if(random == 1)
+				display7SEG_1(j / 10);
+			else
+				display7SEG_1(j % 10);
+			if(dem == 0){
+				j--;
+			}
+		}
+		if(t == 0) {
+			t = max_Green;
+			j = max_Yellow;
+			test = 0;
+		}
+		if(dem == 0){
+			counter++;
+		}
+		if(counter == max_Red){
+			bool = 1;
+			counter = 0;
+			i = max_Red; t = max_Green;
+			test = 1;
+		}
+	}else{
+		LED_RED_2();
+		if(random == 1)
+			display7SEG_1(i / 10);
+		else
+			display7SEG_1(i % 10);
+		if(dem == 0){
+			i--;
+		}
+		if(test == 1){
+			LED_GREEN_1();
+			if(random == 1)
+				display7SEG(t / 10);
+			else
+				display7SEG(t % 10);
+			if(dem == 0){
+				t--;
+			}
+		}else{
+			LED_YELLOW_1();
+			if(random == 1)
+				display7SEG(j / 10);
+			else
+				display7SEG(j % 10);
+			if(dem == 0){
+				j--;
+			}
+		}
+		if(t == 0) {
+			t = max_Green;
+			j = max_Yellow;
+			test = 0;
+		}
+		if(dem == 0){
+			counter++;
+		}
+		if(counter == max_Red){
+			bool = 0;
+			counter = 0;
+			i = max_Red; t = max_Green;
+			test = 1;
+		}
+	}
+}
+
+#endif /* INC_COMPONENT_H_ */
