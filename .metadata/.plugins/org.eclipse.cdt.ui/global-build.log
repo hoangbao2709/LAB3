@@ -1,25 +1,20 @@
-10:37:31 **** Incremental Build of configuration Debug for project SETTING2 ****
+16:15:03 **** Incremental Build of configuration Debug for project SETTING2 ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/fsm_automatic.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_automatic.d" -MT"Core/Src/fsm_automatic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_automatic.o"
-../Core/Src/fsm_automatic.c: In function 'case1':
-../Core/Src/fsm_automatic.c:25:4: warning: implicit declaration of function 'display7SEG'; did you mean 'display7SEG_1'? [-Wimplicit-function-declaration]
-   25 |    display7SEG(i_1 / 10);
-      |    ^~~~~~~~~~~
-      |    display7SEG_1
-arm-none-eabi-gcc -o "SETTING2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\VXL\Lab3\SETTING2\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SETTING2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc "../Core/Src/fsm_manual.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_manual.d" -MT"Core/Src/fsm_manual.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_manual.o"
+arm-none-eabi-gcc -o "SETTING2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\VXL_3\SETTING2\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SETTING2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: SETTING2.elf
  
 arm-none-eabi-size   SETTING2.elf 
 arm-none-eabi-objdump -h -S  SETTING2.elf  > "SETTING2.list"
 arm-none-eabi-objcopy  -O ihex  SETTING2.elf  "SETTING2.hex"
-   text	   data	    bss	    dec	    hex	filename
-  11892	    156	   1764	  13812	   35f4	SETTING2.elf
 arm-none-eabi-objcopy  -O binary  SETTING2.elf  "SETTING2.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11832	    144	   1768	  13744	   35b0	SETTING2.elf
 Finished building: default.size.stdout
  
 Finished building: SETTING2.hex
 Finished building: SETTING2.bin
+ 
+ 
 Finished building: SETTING2.list
- 
- 
  
