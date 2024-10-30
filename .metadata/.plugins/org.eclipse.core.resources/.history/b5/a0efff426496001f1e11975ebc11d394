@@ -16,7 +16,6 @@ int max_Red = 5, max_Yellow = 2, max_Green = 3, turn = 0;
 int prev_max_Red = 5, prev_max_Yellow = 2, prev_max_Green = 3;
 
 void Reset(){
-	en0 = 1; en1 = 0; en2 = 1; en3 = 0;
 	i_1 = max_Red;
 	j_1 = max_Yellow;
 	t_1 = max_Green;

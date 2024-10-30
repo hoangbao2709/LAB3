@@ -14,7 +14,20 @@ void fsm_manual(){
 		button_flag[0] = 0;
 		mode++;
 		test_1 = 1;
-		if(mode == 4) mode = 0;
+		if(mode == 4) {
+			if(prev_max_Red == prev_max_Green + prev_max_Yellow){
+				max_Red = prev_max_Red;
+				max_Green = prev_max_Green;
+				max_Yellow = prev_max_Yellow;
+			}else if(prev_max_Red > prev_max_Yellow){
+				prev_max_Green = prev_max_Red - prev_max_Yellow;
+				max_Red = prev_max_Red;
+				max_Green = prev_max_Green;
+				max_Yellow = prev_max_Yellow;
+			}
+			Reset();
+			mode = 0;
+		}
 	}
 	switch(mode){
 	case 0:
@@ -29,7 +42,6 @@ void fsm_manual(){
 				en1 = 1;
 				break;
 			}
-
 			if(mode == 0){
 				en2 = en0;
 				en3 = en1;
