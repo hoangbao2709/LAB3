@@ -1,4 +1,4 @@
-09:13:49 **** Incremental Build of configuration Debug for project SETTING2 ****
+09:28:08 **** Incremental Build of configuration Debug for project SETTING2 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/fsm_manual.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_manual.d" -MT"Core/Src/fsm_manual.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_manual.o"
 ../Core/Src/fsm_manual.c: In function 'fsm_manual':
@@ -12,16 +12,16 @@ arm-none-eabi-size   SETTING2.elf
 arm-none-eabi-objdump -h -S  SETTING2.elf  > "SETTING2.list"
 arm-none-eabi-objcopy  -O ihex  SETTING2.elf  "SETTING2.hex"
    text	   data	    bss	    dec	    hex	filename
-  12232	    172	   1772	  14176	   3760	SETTING2.elf
+  12312	    172	   1772	  14256	   37b0	SETTING2.elf
 arm-none-eabi-objcopy  -O binary  SETTING2.elf  "SETTING2.bin"
 Finished building: default.size.stdout
  
-Finished building: SETTING2.bin
 Finished building: SETTING2.hex
+Finished building: SETTING2.bin
  
  
 Finished building: SETTING2.list
  
 
-09:13:49 Build Finished. 0 errors, 1 warnings. (took 433ms)
+09:28:08 Build Finished. 0 errors, 1 warnings. (took 435ms)
 

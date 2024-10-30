@@ -103,7 +103,7 @@ int main(void)
   setTimer(0, 1);
   setTimer(1, 1);
   setTimer(2, 1);
-  setTimer(3, 1);
+
   while (1)
   {
 
