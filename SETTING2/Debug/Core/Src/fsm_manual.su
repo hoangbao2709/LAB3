@@ -1,1 +1,2 @@
-fsm_manual.c:12:6:fsm_manual	48	static
+fsm_manual.c:12:5:case2	24	static
+fsm_manual.c:61:6:fsm_manual	48	static

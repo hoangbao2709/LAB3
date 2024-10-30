@@ -29,7 +29,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/software_timer.h ../Core/Inc/led_traffic.h \
  ../Core/Inc/Component_1.h ../Core/Inc/Component.h \
  ../Core/Inc/fsm_setting.h ../Core/Inc/fsm_automatic.h \
- ../Core/Inc/fsm_setting.h
+ ../Core/Inc/global.h ../Core/Inc/fsm_setting.h
 
 ../Core/Inc/main.h:
 
@@ -108,5 +108,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/fsm_setting.h:
 
 ../Core/Inc/fsm_automatic.h:
+
+../Core/Inc/global.h:
 
 ../Core/Inc/fsm_setting.h:

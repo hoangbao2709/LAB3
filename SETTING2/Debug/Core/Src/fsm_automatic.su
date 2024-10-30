@@ -1,3 +1,2 @@
-fsm_automatic.c:18:6:Reset	4	static
-fsm_automatic.c:32:6:case1	8	static
-fsm_automatic.c:131:5:case2	24	static
+fsm_automatic.c:11:6:Reset	4	static
+fsm_automatic.c:25:6:case1	8	static

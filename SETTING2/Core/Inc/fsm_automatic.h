@@ -14,14 +14,7 @@
 #include "Component_1.h"
 #include "Component.h"
 #include "fsm_setting.h"
-
-extern int bool;
-extern int counter;
-extern int i_1, j_1, t_1;
-extern int i_2, j_2, t_2;
-extern int test, random, dem;
-extern int max_Red, max_Yellow, max_Green;
-extern int prev_max_Red, prev_max_Yellow, prev_max_Green;
+#include "global.h"
 
 void case1();
 

@@ -9,6 +9,55 @@
 
 int temp, test_1 = 0;
 
+int case2(int mode,int a,
+		GPIO_TypeDef* D0_PORT, uint16_t D0_PIN, GPIO_TypeDef* D1_PORT, uint16_t D1_PIN,
+		GPIO_TypeDef* D2_PORT, uint16_t D2_PIN, GPIO_TypeDef* D3_PORT, uint16_t D3_PIN,
+		GPIO_TypeDef* D4_PORT, uint16_t D4_PIN, GPIO_TypeDef* D5_PORT, uint16_t D5_PIN){
+	setup_Led7SEG();
+
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+
+	HAL_GPIO_WritePin(D0_PORT, D0_PIN, en0);
+	HAL_GPIO_WritePin(D1_PORT, D1_PIN, en0);
+	HAL_GPIO_WritePin(D2_PORT, D2_PIN, 0);
+	HAL_GPIO_WritePin(D3_PORT, D3_PIN, 0);
+	HAL_GPIO_WritePin(D4_PORT, D4_PIN, 0);
+	HAL_GPIO_WritePin(D5_PORT, D5_PIN, 0);
+	display7SEG_1(mode + 1);
+
+	if(button_flag[1] == 1){
+	  button_flag[1] = 0;
+	  a++;
+	}
+	if(button_flag[2] == 1){
+	  button_flag[2] = 0;
+	  switch(mode){
+	  case 1:
+		  prev_max_Red = a;
+		  break;
+	  case 2:
+		  prev_max_Yellow = a;
+		  break;
+	  case 3:
+		  prev_max_Green = a;
+		  break;
+	  }
+	}
+	if(button_flag[3] == 1){
+	  button_flag[3] = 0;
+	  a--;
+	}
+	if(a > 99) a = 0;
+	if(a < 0) a = 99;
+	if(random == 1)
+	  display7SEG(a / 10);
+	else
+	  display7SEG(a % 10);
+	return a;
+}
+
+
 void fsm_manual(){
 	if(button_flag[0] == 1){
 		button_flag[0] = 0;
@@ -29,9 +78,9 @@ void fsm_manual(){
 			mode = 0;
 		}
 	}
-	if(timer_flag[2] == 1){
+	if(timer_flag[3] == 1){
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		setTimer(2, 25);
+		setTimer(3, 25);
 	}
 	switch(mode){
 	case 0:

@@ -14,8 +14,7 @@
 #include "Component_1.h"
 #include "Component.h"
 #include "fsm_automatic.h"
-
-extern int mode, en0, en1, en2, en3;
+#include "global.h"
 
 void turn_Led7SEG();
 void setup_Led7SEG();

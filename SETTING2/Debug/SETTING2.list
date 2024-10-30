@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  000200a4  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000a186  00000000  00000000  000200cd  2**0
+ 12 .debug_info   0000a299  00000000  00000000  000200cd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001f1b  00000000  00000000  0002a253  2**0
+ 13 .debug_abbrev 00001f19  00000000  00000000  0002a366  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000b30  00000000  00000000  0002c170  2**3
+ 14 .debug_aranges 00000b48  00000000  00000000  0002c280  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000a08  00000000  00000000  0002cca0  2**3
+ 15 .debug_ranges 00000a08  00000000  00000000  0002cdc8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001728f  00000000  00000000  0002d6a8  2**0
+ 16 .debug_macro  000172d6  00000000  00000000  0002d7d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000cf6c  00000000  00000000  00044937  2**0
+ 17 .debug_line   0000cfe8  00000000  00000000  00044aa6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082628  00000000  00000000  000518a3  2**0
+ 18 .debug_str    00082634  00000000  00000000  00051a8e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d3ecb  2**0
+ 19 .comment      00000053  00000000  00000000  000d40c2  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002af4  00000000  00000000  000d3f20  2**2
+ 20 .debug_frame  00002af4  00000000  00000000  000d4118  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1354,10 +1354,10 @@ void getKeyInput(){
  8000aec:	20000040 	.word	0x20000040
 
 08000af0 <Reset>:
-int i_2 = 5, j_2 = 2, t_2 = 3;
-int test = 1, random = 1, dem = 2;
-int max_Red = 5, max_Yellow = 2, max_Green = 3, turn = 0;
-int prev_max_Red = 5, prev_max_Yellow = 2, prev_max_Green = 3;
+ */
+
+#include "fsm_automatic.h"
+#include "global.h"
 
 void Reset(){
  8000af0:	b480      	push	{r7}
@@ -1436,33 +1436,32 @@ void Reset(){
  8000b6a:	bc80      	pop	{r7}
  8000b6c:	4770      	bx	lr
  8000b6e:	bf00      	nop
- 8000b70:	20000090 	.word	0x20000090
- 8000b74:	200000e4 	.word	0x200000e4
- 8000b78:	20000094 	.word	0x20000094
- 8000b7c:	200000e8 	.word	0x200000e8
- 8000b80:	20000078 	.word	0x20000078
- 8000b84:	20000054 	.word	0x20000054
- 8000b88:	2000007c 	.word	0x2000007c
- 8000b8c:	20000058 	.word	0x20000058
- 8000b90:	20000080 	.word	0x20000080
- 8000b94:	2000005c 	.word	0x2000005c
- 8000b98:	20000060 	.word	0x20000060
- 8000b9c:	20000064 	.word	0x20000064
- 8000ba0:	20000068 	.word	0x20000068
- 8000ba4:	2000006c 	.word	0x2000006c
- 8000ba8:	20000070 	.word	0x20000070
- 8000bac:	20000074 	.word	0x20000074
- 8000bb0:	200000d8 	.word	0x200000d8
- 8000bb4:	200000d4 	.word	0x200000d4
- 8000bb8:	20000050 	.word	0x20000050
- 8000bbc:	200000d0 	.word	0x200000d0
+ 8000b70:	20000050 	.word	0x20000050
+ 8000b74:	200000d8 	.word	0x200000d8
+ 8000b78:	20000054 	.word	0x20000054
+ 8000b7c:	200000dc 	.word	0x200000dc
+ 8000b80:	20000080 	.word	0x20000080
+ 8000b84:	2000005c 	.word	0x2000005c
+ 8000b88:	20000084 	.word	0x20000084
+ 8000b8c:	20000060 	.word	0x20000060
+ 8000b90:	20000088 	.word	0x20000088
+ 8000b94:	20000064 	.word	0x20000064
+ 8000b98:	20000068 	.word	0x20000068
+ 8000b9c:	2000006c 	.word	0x2000006c
+ 8000ba0:	20000070 	.word	0x20000070
+ 8000ba4:	20000074 	.word	0x20000074
+ 8000ba8:	20000078 	.word	0x20000078
+ 8000bac:	2000007c 	.word	0x2000007c
+ 8000bb0:	200000e8 	.word	0x200000e8
+ 8000bb4:	200000e4 	.word	0x200000e4
+ 8000bb8:	20000058 	.word	0x20000058
+ 8000bbc:	200000e0 	.word	0x200000e0
 
 08000bc0 <case1>:
 
 void case1() {
  8000bc0:	b580      	push	{r7, lr}
  8000bc2:	af00      	add	r7, sp, #0
-
 	switch(counter){
  8000bc4:	4ba5      	ldr	r3, [pc, #660]	; (8000e5c <case1+0x29c>)
  8000bc6:	681b      	ldr	r3, [r3, #0]
@@ -1845,20 +1844,20 @@ void case1() {
  8000e54:	f7ff fd3e 	bl	80008d4 <display7SEG_1>
  8000e58:	e02c      	b.n	8000eb4 <case1+0x2f4>
  8000e5a:	bf00      	nop
- 8000e5c:	200000d4 	.word	0x200000d4
- 8000e60:	20000070 	.word	0x20000070
- 8000e64:	20000054 	.word	0x20000054
+ 8000e5c:	200000e4 	.word	0x200000e4
+ 8000e60:	20000078 	.word	0x20000078
+ 8000e64:	2000005c 	.word	0x2000005c
  8000e68:	66666667 	.word	0x66666667
- 8000e6c:	20000074 	.word	0x20000074
- 8000e70:	20000078 	.word	0x20000078
- 8000e74:	2000005c 	.word	0x2000005c
- 8000e78:	20000080 	.word	0x20000080
- 8000e7c:	20000058 	.word	0x20000058
- 8000e80:	2000007c 	.word	0x2000007c
- 8000e84:	20000050 	.word	0x20000050
- 8000e88:	20000060 	.word	0x20000060
- 8000e8c:	20000068 	.word	0x20000068
- 8000e90:	20000064 	.word	0x20000064
+ 8000e6c:	2000007c 	.word	0x2000007c
+ 8000e70:	20000080 	.word	0x20000080
+ 8000e74:	20000064 	.word	0x20000064
+ 8000e78:	20000088 	.word	0x20000088
+ 8000e7c:	20000060 	.word	0x20000060
+ 8000e80:	20000084 	.word	0x20000084
+ 8000e84:	20000058 	.word	0x20000058
+ 8000e88:	20000068 	.word	0x20000068
+ 8000e8c:	20000070 	.word	0x20000070
+ 8000e90:	2000006c 	.word	0x2000006c
 			display7SEG_1(j_2 % 10);
  8000e94:	4b15      	ldr	r3, [pc, #84]	; (8000eec <case1+0x32c>)
  8000e96:	681a      	ldr	r2, [r3, #0]
@@ -1912,13 +1911,14 @@ void case1() {
 }
  8000ee8:	bf00      	nop
  8000eea:	bd80      	pop	{r7, pc}
- 8000eec:	20000064 	.word	0x20000064
+ 8000eec:	2000006c 	.word	0x2000006c
  8000ef0:	66666667 	.word	0x66666667
- 8000ef4:	20000074 	.word	0x20000074
- 8000ef8:	2000007c 	.word	0x2000007c
- 8000efc:	20000050 	.word	0x20000050
+ 8000ef4:	2000007c 	.word	0x2000007c
+ 8000ef8:	20000084 	.word	0x20000084
+ 8000efc:	20000058 	.word	0x20000058
 
 08000f00 <case2>:
+int temp, test_1 = 0;
 
 int case2(int mode,int a,
 		GPIO_TypeDef* D0_PORT, uint16_t D0_PIN, GPIO_TypeDef* D1_PORT, uint16_t D1_PIN,
@@ -2116,19 +2116,16 @@ int case2(int mode,int a,
  8001044:	46bd      	mov	sp, r7
  8001046:	bd80      	pop	{r7, pc}
  8001048:	40010800 	.word	0x40010800
- 800104c:	20000090 	.word	0x20000090
+ 800104c:	20000050 	.word	0x20000050
  8001050:	200000c0 	.word	0x200000c0
- 8001054:	20000084 	.word	0x20000084
- 8001058:	20000088 	.word	0x20000088
- 800105c:	2000008c 	.word	0x2000008c
- 8001060:	20000070 	.word	0x20000070
+ 8001054:	2000008c 	.word	0x2000008c
+ 8001058:	20000090 	.word	0x20000090
+ 800105c:	20000094 	.word	0x20000094
+ 8001060:	20000078 	.word	0x20000078
  8001064:	66666667 	.word	0x66666667
 
 08001068 <fsm_manual>:
 
-#include "fsm_manual.h"
-
-int temp, test_1 = 0;
 
 void fsm_manual(){
  8001068:	b580      	push	{r7, lr}
@@ -2223,18 +2220,18 @@ void fsm_manual(){
  80010fa:	601a      	str	r2, [r3, #0]
 		}
 	}
-	if(timer_flag[2] == 1){
+	if(timer_flag[3] == 1){
  80010fc:	4b6a      	ldr	r3, [pc, #424]	; (80012a8 <fsm_manual+0x240>)
- 80010fe:	689b      	ldr	r3, [r3, #8]
+ 80010fe:	68db      	ldr	r3, [r3, #12]
  8001100:	2b01      	cmp	r3, #1
  8001102:	d107      	bne.n	8001114 <fsm_manual+0xac>
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
  8001104:	2120      	movs	r1, #32
  8001106:	4869      	ldr	r0, [pc, #420]	; (80012ac <fsm_manual+0x244>)
  8001108:	f000 ff6b 	bl	8001fe2 <HAL_GPIO_TogglePin>
-		setTimer(2, 25);
+		setTimer(3, 25);
  800110c:	2119      	movs	r1, #25
- 800110e:	2002      	movs	r0, #2
+ 800110e:	2003      	movs	r0, #3
  8001110:	f000 fb4a 	bl	80017a8 <setTimer>
 	}
 	switch(mode){
@@ -2450,22 +2447,22 @@ void fsm_manual(){
  8001280:	e056      	b.n	8001330 <fsm_manual+0x2c8>
  8001282:	bf00      	nop
  8001284:	200000c0 	.word	0x200000c0
- 8001288:	200000e0 	.word	0x200000e0
- 800128c:	200000dc 	.word	0x200000dc
- 8001290:	2000008c 	.word	0x2000008c
- 8001294:	20000088 	.word	0x20000088
- 8001298:	20000084 	.word	0x20000084
- 800129c:	20000078 	.word	0x20000078
- 80012a0:	20000080 	.word	0x20000080
- 80012a4:	2000007c 	.word	0x2000007c
+ 8001288:	200000d4 	.word	0x200000d4
+ 800128c:	200000d0 	.word	0x200000d0
+ 8001290:	20000094 	.word	0x20000094
+ 8001294:	20000090 	.word	0x20000090
+ 8001298:	2000008c 	.word	0x2000008c
+ 800129c:	20000080 	.word	0x20000080
+ 80012a0:	20000088 	.word	0x20000088
+ 80012a4:	20000084 	.word	0x20000084
  80012a8:	20000114 	.word	0x20000114
  80012ac:	40010800 	.word	0x40010800
- 80012b0:	20000090 	.word	0x20000090
- 80012b4:	200000e4 	.word	0x200000e4
- 80012b8:	20000094 	.word	0x20000094
- 80012bc:	200000e8 	.word	0x200000e8
- 80012c0:	20000070 	.word	0x20000070
- 80012c4:	20000074 	.word	0x20000074
+ 80012b0:	20000050 	.word	0x20000050
+ 80012b4:	200000d8 	.word	0x200000d8
+ 80012b8:	20000054 	.word	0x20000054
+ 80012bc:	200000dc 	.word	0x200000dc
+ 80012c0:	20000078 	.word	0x20000078
+ 80012c4:	2000007c 	.word	0x2000007c
  80012c8:	2000013c 	.word	0x2000013c
 	case 3:
 		if(test_1 == 1){
@@ -2528,10 +2525,10 @@ void fsm_manual(){
  8001332:	46bd      	mov	sp, r7
  8001334:	bd80      	pop	{r7, pc}
  8001336:	bf00      	nop
- 8001338:	200000dc 	.word	0x200000dc
- 800133c:	20000080 	.word	0x20000080
+ 8001338:	200000d0 	.word	0x200000d0
+ 800133c:	20000088 	.word	0x20000088
  8001340:	2000013c 	.word	0x2000013c
- 8001344:	200000e0 	.word	0x200000e0
+ 8001344:	200000d4 	.word	0x200000d4
  8001348:	40010800 	.word	0x40010800
 
 0800134c <turn_Led7SEG>:
@@ -2578,11 +2575,11 @@ void turn_Led7SEG(){
 }
  8001394:	bf00      	nop
  8001396:	bd80      	pop	{r7, pc}
- 8001398:	20000090 	.word	0x20000090
+ 8001398:	20000050 	.word	0x20000050
  800139c:	40010800 	.word	0x40010800
- 80013a0:	200000e4 	.word	0x200000e4
- 80013a4:	20000094 	.word	0x20000094
- 80013a8:	200000e8 	.word	0x200000e8
+ 80013a0:	200000d8 	.word	0x200000d8
+ 80013a4:	20000054 	.word	0x20000054
+ 80013a8:	200000dc 	.word	0x200000dc
 
 080013ac <setup_Led7SEG>:
 
@@ -2668,12 +2665,12 @@ void setup_Led7SEG(){
  800141c:	bd80      	pop	{r7, pc}
  800141e:	bf00      	nop
  8001420:	20000114 	.word	0x20000114
- 8001424:	20000090 	.word	0x20000090
- 8001428:	200000e4 	.word	0x200000e4
- 800142c:	200000e0 	.word	0x200000e0
- 8001430:	20000094 	.word	0x20000094
- 8001434:	200000e8 	.word	0x200000e8
- 8001438:	20000070 	.word	0x20000070
+ 8001424:	20000050 	.word	0x20000050
+ 8001428:	200000d8 	.word	0x200000d8
+ 800142c:	200000d4 	.word	0x200000d4
+ 8001430:	20000054 	.word	0x20000054
+ 8001434:	200000dc 	.word	0x200000dc
+ 8001438:	20000078 	.word	0x20000078
 
 0800143c <fsm_setting>:
 
